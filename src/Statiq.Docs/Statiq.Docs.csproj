@@ -18,5 +18,18 @@
       </ItemGroup>      
     </Otherwise>
   </Choose>
+  
+  <Choose>
+    <When Condition=" '$(StatiqFrameworkVersion)' == ''">  
+      <ItemGroup>
+        <ProjectReference Include="$(StatiqFrameworkRoot)\src\extensions\Statiq.CodeAnalysis\Statiq.CodeAnalysis.csproj" />
+      </ItemGroup>      
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Statiq.CodeAnalysis" Version="$(StatiqFrameworkVersion)" />
+      </ItemGroup>      
+    </Otherwise>
+  </Choose>
 
 </Project>
