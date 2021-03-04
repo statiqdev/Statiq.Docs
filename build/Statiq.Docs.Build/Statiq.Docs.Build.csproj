@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition=" '$(StatiqWebVersion)' == ''">
+      <ItemGroup>
+        <ProjectReference Include="$(StatiqWebRoot)\src\Statiq.Web\Statiq.Web.csproj" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Statiq.Web" Version="$(StatiqWebVersion)" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <ItemGroup>
+    <PackageReference Include="Octokit" Version="0.46.0" />
+  </ItemGroup>
+  
+</Project>

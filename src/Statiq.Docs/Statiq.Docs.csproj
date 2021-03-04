@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>Statiq Docs is a flexible API documentation generator.</Description>
+    <PackageTags>Statiq Static StaticContent StaticSite Documentation Docs</PackageTags>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition=" '$(StatiqWebVersion)' == ''">  
+      <ItemGroup>
+        <ProjectReference Include="$(StatiqWebRoot)\src\Statiq.Web\Statiq.Web.csproj" />
+      </ItemGroup>      
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <PackageReference Include="Statiq.Web" Version="$(StatiqWebVersion)" />
+      </ItemGroup>      
+    </Otherwise>
+  </Choose>
+
+</Project>
