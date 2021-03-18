@@ -21,6 +21,8 @@ namespace Statiq.Docs.Pipelines
         {
             Dependencies.Add(nameof(Code));
 
+            DependencyOf.Add(nameof(Statiq.Web.Pipelines.Inputs));
+
             ProcessModules = new ModuleList(
                 new ExecuteIf(
                     Config.FromContext(ctx =>
