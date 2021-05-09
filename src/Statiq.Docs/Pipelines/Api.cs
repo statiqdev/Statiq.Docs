@@ -27,9 +27,9 @@ namespace Statiq.Docs.Pipelines
                 new ExecuteIf(
                     Config.FromContext(ctx =>
                         ctx.Outputs.FromPipeline(nameof(Code)).Any()
-                        || ctx.Settings.GetList<string>(DocsKeys.AssemblyFiles).Count > 0
-                        || ctx.Settings.GetList<string>(DocsKeys.ProjectFiles).Count > 0
-                        || ctx.Settings.GetList<string>(DocsKeys.SolutionFiles).Count > 0),
+                        || ctx.Settings.GetList<string>(DocsKeys.AssemblyFiles)?.Count > 0
+                        || ctx.Settings.GetList<string>(DocsKeys.ProjectFiles)?.Count > 0
+                        || ctx.Settings.GetList<string>(DocsKeys.SolutionFiles)?.Count > 0),
                     new ConcatDocuments(nameof(Code)),
                     new ExecuteConfig(Config.FromContext(ctx =>
                         new AnalyzeCSharp()
