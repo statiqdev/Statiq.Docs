@@ -1,3 +1,5 @@
+# 1.0.0-alpha.3
+
 # 1.0.0-alpha.2
 
 - Ensures the Api pipeline is a dependency of the Statiq Web Inputs pipeline.
