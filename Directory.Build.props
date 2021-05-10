@@ -2,8 +2,8 @@
   
   <PropertyGroup>
     <!-- The NuGet version of Statiq.Web and Statiq.Framework (for the CodeAnalysis extension) that should be referenced, or empty to use local references -->
-    <StatiqWebVersion></StatiqWebVersion>
-    <StatiqFrameworkVersion></StatiqFrameworkVersion>
+    <StatiqWebVersion>1.0.0-beta.28</StatiqWebVersion>
+    <StatiqFrameworkVersion>1.0.0-beta.42</StatiqFrameworkVersion>
     <StatiqWebRoot>..\..\..\Statiq.Web</StatiqWebRoot>
     <StatiqFrameworkRoot>..\..\..\Statiq.Framework</StatiqFrameworkRoot>
   </PropertyGroup>
