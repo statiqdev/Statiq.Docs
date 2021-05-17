@@ -6,14 +6,16 @@
   </PropertyGroup>
 
   <Choose>
-    <When Condition=" '$(StatiqWebVersion)' == ''">
+    <When Condition=" '$(StatiqFrameworkVersion)' == ''">
       <ItemGroup>
-        <ProjectReference Include="$(StatiqWebRoot)\src\Statiq.Web\Statiq.Web.csproj" />
+        <ProjectReference Include="$(StatiqFrameworkRoot)\src\core\Statiq.App\Statiq.App.csproj" />
+        <ProjectReference Include="$(StatiqFrameworkRoot)\src\core\Statiq.Common\Statiq.Common.csproj" />
+        <ProjectReference Include="$(StatiqFrameworkRoot)\src\core\Statiq.Core\Statiq.Core.csproj" />
       </ItemGroup>
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Statiq.Web" Version="$(StatiqWebVersion)" />
+        <PackageReference Include="Statiq.App" Version="$(StatiqFrameworkVersion)" />
       </ItemGroup>
     </Otherwise>
   </Choose>
