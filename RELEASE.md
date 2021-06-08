@@ -1,3 +1,5 @@
+# 1.0.0-alpha.7
+
 # 1.0.0-alpha.6
 
 - Updated Statiq Web to version [1.0.0-beta.31](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.31).
