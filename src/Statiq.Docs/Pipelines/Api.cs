@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Statiq.CodeAnalysis;
 using Statiq.Common;
 using Statiq.Core;
+using Statiq.Web;
 
 namespace Statiq.Docs.Pipelines
 {
@@ -21,7 +22,9 @@ namespace Statiq.Docs.Pipelines
         {
             Dependencies.Add(nameof(Code));
 
-            DependencyOf.Add(nameof(Statiq.Web.Pipelines.Inputs));
+            // Will only get processed by the Content pipeline if OutputApiDocuments is true which sets
+            // ContentType to ContentType.Content, otherwise pipeline will ignore output documents
+            DependencyOf.Add(nameof(Web.Pipelines.Content));
 
             ProcessModules = new ModuleList(
                 new ExecuteIf(
@@ -65,7 +68,25 @@ namespace Statiq.Docs.Pipelines
                                 TypeNameLinks typeNameLinks = ctx.GetService<TypeNameLinks>();
                                 typeNameLinks.Links.AddOrUpdate(WebUtility.HtmlEncode(name), ctx.GetLink(doc), (x, y) => string.Empty);
                             }
-                    })))));
+
+                            // Add the layout path if one was defined
+                            MetadataItems metadataItems = new MetadataItems();
+                            NormalizedPath apiLayout = ctx.GetPath(DocsKeys.ApiLayout);
+                            if (!apiLayout.IsNullOrEmpty)
+                            {
+                                metadataItems.Add(WebKeys.Layout, apiLayout);
+                            }
+
+                            // Change the content provider if needed
+                            IContentProvider contentProvider = doc.ContentProvider;
+                            if (ctx.GetBool(DocsKeys.OutputApiDocuments))
+                            {
+                                contentProvider = doc.ContentProvider.CloneWithMediaType(MediaTypes.Html);
+                                metadataItems.Add(WebKeys.ContentType, ContentType.Content);
+                            }
+
+                            return metadataItems.Count > 0 ? doc.Clone(metadataItems, contentProvider) : doc;
+                        })))));
         }
     }
 }

@@ -1,5 +1,9 @@
 # 1.0.0-alpha.8
 
+- Added `DocsKeys.OutputApiDocuments` to control whether the documents representing code analysis symbols should be output to the Statiq Web Content pipeline.
+- Added `DocsKeys.ApiLayout` to specify a special layout for use with code analysis symbol documents (useful for themes to provide a layout at a consistent location).
+- Made the `Api` pipeline a dependency of the Statiq Web Content pipeline and added a content type so that the output documents are processed when `DocsKeys.OutputApiDocuments` is set to `true`.S
+
 # 1.0.0-alpha.7
 
 - Updated Statiq Web to version [1.0.0-beta.32](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.32).

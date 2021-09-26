@@ -59,10 +59,24 @@ namespace Statiq.Docs
         public const string ApiPath = nameof(ApiPath);
 
         /// <summary>
+        /// The path to a layout file for use with API documents. Themes can use this
+        /// to set a consistent layout that works even when <see cref="ApiPath"/> changes.
+        /// If undefined, normal layout file searching rules will apply.
+        /// </summary>
+        /// <type><see cref="NormalizedPath"/> or <see cref="string"/></type>
+        public const string ApiLayout = nameof(ApiLayout);
+
+        /// <summary>
         /// Setting this to <c>true</c> will assume <c>inheritdoc</c> for all API symbols
         /// that don't provide their own documentation comments.
         /// </summary>
         /// <type><see cref="bool"/></type>
         public const string ImplicitInheritDoc = nameof(ImplicitInheritDoc);
+
+        /// <summary>
+        /// Controls whether API symbol documents should be output or treated only as data.
+        /// The default is <c>true</c> which outputs pages for each symbol.
+        /// </summary>
+        public const string OutputApiDocuments = nameof(OutputApiDocuments);
     }
 }

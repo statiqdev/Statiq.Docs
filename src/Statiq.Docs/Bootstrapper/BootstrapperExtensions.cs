@@ -46,7 +46,8 @@ namespace Statiq.Docs
                             "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
                         }
                     },
-                    { DocsKeys.ApiPath, "api" }
+                    { DocsKeys.ApiPath, "api" },
+                    { DocsKeys.OutputApiDocuments, true }
                 });
     }
 }
