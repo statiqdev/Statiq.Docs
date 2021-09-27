@@ -7,28 +7,28 @@
   </PropertyGroup>
 
   <Choose>
-    <When Condition=" '$(StatiqWebVersion)' == ''">  
+    <When Condition=" '$(StatiqWebVersion)' == ''">
       <ItemGroup>
-        <ProjectReference Include="$(StatiqWebRoot)\src\Statiq.Web\Statiq.Web.csproj" />
-      </ItemGroup>      
+        <ProjectReference Include="..\..\..\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
+      </ItemGroup>
     </When>
     <Otherwise>
       <ItemGroup>
         <PackageReference Include="Statiq.Web" Version="$(StatiqWebVersion)" />
-      </ItemGroup>      
+      </ItemGroup>
     </Otherwise>
   </Choose>
-  
+
   <Choose>
-    <When Condition=" '$(StatiqFrameworkVersion)' == ''">  
+    <When Condition=" '$(StatiqFrameworkVersion)' == ''">
       <ItemGroup>
-        <ProjectReference Include="$(StatiqFrameworkRoot)\src\extensions\Statiq.CodeAnalysis\Statiq.CodeAnalysis.csproj" />
-      </ItemGroup>      
+        <ProjectReference Include="..\..\..\Statiq.Framework\src\extensions\Statiq.CodeAnalysis\Statiq.CodeAnalysis.csproj" />
+      </ItemGroup>
     </When>
     <Otherwise>
       <ItemGroup>
         <PackageReference Include="Statiq.CodeAnalysis" Version="$(StatiqFrameworkVersion)" />
-      </ItemGroup>      
+      </ItemGroup>
     </Otherwise>
   </Choose>
 
