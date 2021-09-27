@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <Choose>
-    <When Condition=" '$(StatiqWebVersion)' == ''">
+    <When Condition=" '$(StatiqWebVersion)' == 'local'">
       <ItemGroup>
         <ProjectReference Include="..\..\..\Statiq.Web\src\Statiq.Web\Statiq.Web.csproj" />
       </ItemGroup>
@@ -20,7 +20,7 @@
   </Choose>
 
   <Choose>
-    <When Condition=" '$(StatiqFrameworkVersion)' == ''">
+    <When Condition=" '$(StatiqFrameworkVersion)' == 'local'">
       <ItemGroup>
         <ProjectReference Include="..\..\..\Statiq.Framework\src\extensions\Statiq.CodeAnalysis\Statiq.CodeAnalysis.csproj" />
       </ItemGroup>

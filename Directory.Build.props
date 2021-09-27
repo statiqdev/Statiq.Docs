@@ -2,7 +2,7 @@
   <Import Project="../Directory.Build.props" Condition="Exists('../Directory.Build.props')" />
 
   <PropertyGroup>
-    <!-- The NuGet version of Statiq.Web and Statiq.Framework (for the CodeAnalysis extension) that should be referenced, or empty to use local references -->
+    <!-- The NuGet version of Statiq.Web and Statiq.Framework (for the CodeAnalysis extension) that should be referenced, or "local" to use local references -->
     <StatiqWebVersion Condition="'$(StatiqWebVersion)' == ''">1.0.0-beta.32</StatiqWebVersion>
     <StatiqFrameworkVersion Condition="'$(StatiqFrameworkVersion)' == ''">1.0.0-beta.47</StatiqFrameworkVersion>
   </PropertyGroup>
