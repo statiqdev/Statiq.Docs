@@ -3,8 +3,8 @@
 
   <PropertyGroup>
     <!-- The NuGet version of Statiq.Web and Statiq.Framework (for the CodeAnalysis extension) that should be referenced, or "local" to use local references -->
-    <StatiqWebVersion Condition="'$(StatiqWebVersion)' == ''">1.0.0-beta.32</StatiqWebVersion>
-    <StatiqFrameworkVersion Condition="'$(StatiqFrameworkVersion)' == ''">1.0.0-beta.47</StatiqFrameworkVersion>
+    <StatiqWebVersion Condition="'$(StatiqWebVersion)' == ''">1.0.0-beta.34</StatiqWebVersion>
+    <StatiqFrameworkVersion Condition="'$(StatiqFrameworkVersion)' == ''">1.0.0-beta.49</StatiqFrameworkVersion>
   </PropertyGroup>
 
   <PropertyGroup>
