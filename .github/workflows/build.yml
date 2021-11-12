@@ -26,7 +26,7 @@ jobs:
         with:
           repository: statiqdev/Statiq.Framework
           path: Statiq.Framework
-          
+
       - name: Checkout Statiq.Web
         uses: actions/checkout@v2
         with:
@@ -40,3 +40,6 @@ jobs:
 
       - name: Build and Test
         run: dotnet run --project "build/Statiq.Docs.Build/Statiq.Docs.Build.csproj" -- test
+        env:
+          StatiqFrameworkVersion: local
+          StatiqWebVersion: local
