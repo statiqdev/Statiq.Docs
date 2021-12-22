@@ -69,8 +69,13 @@ namespace Statiq.Docs.Pipelines
                                 typeNameLinks.Links.AddOrUpdate(WebUtility.HtmlEncode(name), ctx.GetLink(doc), (x, y) => string.Empty);
                             }
 
-                            // Add the layout path if one was defined
+                            // Add metadata
                             MetadataItems metadataItems = new MetadataItems();
+
+                            // Calculate an xref that includes a "api-" prefix to avoid collisions
+                            metadataItems.Add(WebKeys.Xref, "api-" + doc.GetString(CodeAnalysisKeys.QualifiedName));
+
+                            // Add the layout path if one was defined
                             NormalizedPath apiLayout = ctx.GetPath(DocsKeys.ApiLayout);
                             if (!apiLayout.IsNullOrEmpty)
                             {
@@ -85,7 +90,7 @@ namespace Statiq.Docs.Pipelines
                                 metadataItems.Add(WebKeys.ContentType, ContentType.Content);
                             }
 
-                            return metadataItems.Count > 0 ? doc.Clone(metadataItems, contentProvider) : doc;
+                            return doc.Clone(metadataItems, contentProvider);
                         })))));
         }
     }
