@@ -91,7 +91,8 @@ namespace Statiq.Docs.Pipelines
                             }
 
                             return doc.Clone(metadataItems, contentProvider);
-                        })))));
+                        })))
+                        .WithoutSourceMapping()));
         }
     }
 }
