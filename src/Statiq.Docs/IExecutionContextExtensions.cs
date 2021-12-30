@@ -21,7 +21,7 @@ namespace Statiq.Docs
             name ??= document.GetString(CodeAnalysisKeys.DisplayName);
 
             // Link nullable types to their type argument
-            if (document.GetString("Name") == "Nullable")
+            if (document.GetString(CodeAnalysisKeys.Name) == "Nullable")
             {
                 IDocument nullableType = document.GetDocumentList(CodeAnalysisKeys.TypeArguments)?.FirstOrDefault();
                 if (nullableType != null)
@@ -33,7 +33,7 @@ namespace Statiq.Docs
             // If it wasn't nullable, format the name
             name = context.GetFormattedHtmlName(name);
 
-            // Link the type and type parameters seperatly for generic types
+            // Link the type and type parameters separately for generic types
             IReadOnlyList<IDocument> typeArguments = document.GetDocumentList(CodeAnalysisKeys.TypeArguments);
             if (typeArguments?.Count > 0)
             {
@@ -43,9 +43,9 @@ namespace Statiq.Docs
                 if (linkTypeArguments)
                 {
                     // Get the type argument positions
-                    int begin = name.IndexOf("<wbr>&lt;") + 9;
-                    int openParen = name.IndexOf("&gt;<wbr>(");
-                    int end = name.LastIndexOf("&gt;<wbr>", openParen == -1 ? name.Length : openParen);  // Don't look past the opening paren if there is one
+                    int begin = name.IndexOf("<wbr>&lt;", StringComparison.Ordinal) + 9;
+                    int openParen = name.IndexOf("&gt;<wbr>(", StringComparison.Ordinal);
+                    int end = name.LastIndexOf("&gt;<wbr>", openParen == -1 ? name.Length : openParen, StringComparison.Ordinal);  // Don't look past the opening paren if there is one
 
                     // Remove existing type arguments and insert linked type arguments (do this first to preserve original indexes)
                     name = name
@@ -63,7 +63,7 @@ namespace Statiq.Docs
             }
 
             // If it's a type parameter, create an anchor link to the declaring type's original definition
-            if (document.GetString("Kind") == "TypeParameter")
+            if (document.GetString(CodeAnalysisKeys.Kind) == "TypeParameter")
             {
                 IDocument declaringType = document.GetDocument(CodeAnalysisKeys.DeclaringType)?.GetDocument(CodeAnalysisKeys.OriginalDefinition);
                 if (declaringType != null)
