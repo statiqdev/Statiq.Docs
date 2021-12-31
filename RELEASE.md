@@ -1,9 +1,11 @@
 # 1.0.0-alpha.13
 
+- Updated Statiq Web to version [1.0.0-beta.39](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.39).
+
 # 1.0.0-alpha.12
 
-- Updated Statiq Web to version [1.0.0-beta.37](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.38).
-- Updated Statiq Framework to version [1.0.0-beta.52](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.53).
+- Updated Statiq Web to version [1.0.0-beta.38](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.38).
+- Updated Statiq Framework to version [1.0.0-beta.53](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.53).
 - Set the `Xref` setting for all API documents to be prefixed by "api-" to avoid collisions with site content.
 
 # 1.0.0-alpha.11
