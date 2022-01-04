@@ -1,14 +1,7 @@
 <Project>
-  <Import Project="../Directory.Build.props" Condition="Exists('../Directory.Build.props')" />
-
   <PropertyGroup>
-    <!-- The NuGet version of Statiq.Web and Statiq.Framework (for the CodeAnalysis extension) that should be referenced, or "local" to use local references -->
-    <StatiqWebVersion Condition="'$(StatiqWebVersion)' == ''">1.0.0-beta.39</StatiqWebVersion>
-    <StatiqFrameworkVersion Condition="'$(StatiqFrameworkVersion)' == ''">1.0.0-beta.53</StatiqFrameworkVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <Version>1.0.0-alpha.14</Version>
+    <Version Condition="'$(StatiqDocsVersion)' == ''">1.0.0</Version>
+    <Version Condition="'$(StatiqDocsVersion)' != ''">$(StatiqDocsVersion)</Version>
     <InformationalVersion>$(Version)</InformationalVersion>
     <AssemblyVersion>$(Version.Split('-')[0])</AssemblyVersion>
     <FileVersion>$(Version.Split('-')[0])</FileVersion>
