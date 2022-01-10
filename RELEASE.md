@@ -1,3 +1,8 @@
+# 1.0.0-alpha.15
+
+- Updated Statiq Web to version [1.0.0-beta.41](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.41).
+- Updated Statiq Framework to version [1.0.0-beta.55](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.55).
+
 # 1.0.0-alpha.14
 
 - Updated Statiq Web to version [1.0.0-beta.40](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.40).
