@@ -18,6 +18,11 @@ namespace Statiq.Docs
 
         public static HtmlString GetTypeLink(this IExecutionContext context, IDocument document, string name, bool linkTypeArguments)
         {
+            if (document is null)
+            {
+                return HtmlString.Empty;
+            }
+
             name ??= document.GetString(CodeAnalysisKeys.DisplayName);
 
             // Link nullable types to their type argument
