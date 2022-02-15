@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Dave Glick",
+  "classifications": [ "Web", "Docs", "Statiq" ],
+  "identity": "Statiq.Docs.Templates.ConsoleTemplate.CSharp",
+  "name": "Statiq Docs Console Application",
+  "shortName": "statiq-docs",
+  "sourceName": "Statiq.Docs.Template",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}

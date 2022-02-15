@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{321DAC19-C19
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statiq.Docs", "src\Statiq.Docs\Statiq.Docs.csproj", "{567B5D3B-6093-4405-9A6A-466E0FB316EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statiq.Docs.Templates", "src\Statiq.Docs.Templates\Statiq.Docs.Templates.csproj", "{1A749683-7702-4D24-A14E-AC5A83803846}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,12 +18,17 @@ Global
 		{567B5D3B-6093-4405-9A6A-466E0FB316EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{567B5D3B-6093-4405-9A6A-466E0FB316EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{567B5D3B-6093-4405-9A6A-466E0FB316EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A749683-7702-4D24-A14E-AC5A83803846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A749683-7702-4D24-A14E-AC5A83803846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A749683-7702-4D24-A14E-AC5A83803846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A749683-7702-4D24-A14E-AC5A83803846}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{567B5D3B-6093-4405-9A6A-466E0FB316EB} = {321DAC19-C195-4D8F-89E2-DF6EB1C8874A}
+		{1A749683-7702-4D24-A14E-AC5A83803846} = {321DAC19-C195-4D8F-89E2-DF6EB1C8874A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B27D5581-8707-47FB-9411-C4FE433B0CBD}
