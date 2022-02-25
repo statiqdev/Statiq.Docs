@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using Statiq.Common;
@@ -33,6 +34,12 @@ namespace Statiq.Docs
                 .ConfigureServices(services => services
                     .AddSingleton(new TypeNameLinks()));
 
+        private static readonly string[] DefaultSourceFiles = new[]
+        {
+            "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
+            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+        };
+
         private static TBootstrapper AddDefaultDocsSettings<TBootstrapper>(this TBootstrapper bootstrapper)
             where TBootstrapper : IBootstrapper =>
             bootstrapper
@@ -40,14 +47,65 @@ namespace Statiq.Docs
                 {
                     {
                         DocsKeys.SourceFiles,
-                        new[]
-                        {
-                            "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
-                            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
-                        }
+                        DefaultSourceFiles
                     },
                     { DocsKeys.ApiPath, "api" },
                     { DocsKeys.OutputApiDocuments, true }
+                });
+
+        public static TBootstrapper AddSourceFiles<TBootstrapper>(
+            this TBootstrapper bootstrapper,
+            params string[] sourceFiles)
+            where TBootstrapper : IBootstrapper =>
+            bootstrapper.AddCodeFiles(DocsKeys.SourceFiles, DefaultSourceFiles, sourceFiles);
+
+        public static TBootstrapper AddProjectFiles<TBootstrapper>(
+            this TBootstrapper bootstrapper,
+            params string[] sourceFiles)
+            where TBootstrapper : IBootstrapper =>
+            bootstrapper.AddCodeFiles(DocsKeys.ProjectFiles, null, sourceFiles);
+
+        public static TBootstrapper AddSolutionFiles<TBootstrapper>(
+            this TBootstrapper bootstrapper,
+            params string[] sourceFiles)
+            where TBootstrapper : IBootstrapper =>
+            bootstrapper.AddCodeFiles(DocsKeys.SolutionFiles, null, sourceFiles);
+
+        public static TBootstrapper AddAssemblyFiles<TBootstrapper>(
+            this TBootstrapper bootstrapper,
+            params string[] sourceFiles)
+            where TBootstrapper : IBootstrapper =>
+            bootstrapper.AddCodeFiles(DocsKeys.AssemblyFiles, null, sourceFiles);
+
+        private static TBootstrapper AddCodeFiles<TBootstrapper>(
+            this TBootstrapper bootstrapper,
+            string key,
+            string[] defaultValues,
+            string[] values)
+            where TBootstrapper : IBootstrapper =>
+            bootstrapper
+                .ConfigureSettings(settings =>
+                {
+                    if (values?.Length > 0)
+                    {
+                        HashSet<string> aggregateValues = new HashSet<string>();
+                        if (settings.TryGetValue(key, out object valueObject)
+                            && (defaultValues is null || valueObject != defaultValues))
+                        {
+                            if (valueObject is IEnumerable<string> currentValues)
+                            {
+                                aggregateValues.AddRange(currentValues);
+                            }
+
+                            if (valueObject is string currentValue)
+                            {
+                                aggregateValues.Add(currentValue);
+                            }
+                        }
+
+                        aggregateValues.AddRange(values);
+                        settings[key] = aggregateValues;
+                    }
                 });
     }
 }
