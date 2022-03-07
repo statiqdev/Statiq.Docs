@@ -17,8 +17,9 @@ namespace Statiq.Docs
 
         /// <summary>
         /// Indicates where to locate source files for the API documentation.
-        /// By default the globbing pattern "src/**/{!bin,!obj,!packages,!*.Tests,}/**/*.cs"
-        /// is used which searches for all "*.cs" files at any depth under a "src" folder
+        /// By default the globbing patterns "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+        /// and "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+        /// are used which searches for all "*.cs" files at any depth under a "src" folder
         /// but not under "bin", "obj", "packages" or "Tests" folders. You can specify
         /// your own globbing pattern (or more than one globbing pattern) if your source
         /// files are found elsewhere.

@@ -4,11 +4,13 @@
 
 Statiq Docs is a flexible documentation generator. It’s built on top of [Statiq Web](https://statiq.dev/web) and [Statiq Framework](https://statiq.dev/framework) so you can always extend or customize it.
 
-📖 Visit [the Statiq Docs guide](https://statiq.dev/docs) for updated quick start instructions as well as more detailed documentation.
+[📖 Read the documentation](https://statiq.dev/docs) for updated quick start instructions as well as a more detailed guide.
 
-💬 Visit [the Discussions repo](https://github.com/statiqdev/Discussions/discussions) for general discussion about all Statiq projects.
+[💬 Use the Discussions repo](https://github.com/statiqdev/Discussions/discussions) for assistance, questions, and general discussion about all Statiq projects.
 
-💙 If you find Statiq useful, please consider [supporting the project](https://www.statiq.dev/support/).
+[🐞 File an issue](https://github.com/statiqdev/Statiq.Docs/issues) if you find a bug or have a feature request related to Statiq Docs.
+
+[💙 Support the project](https://www.statiq.dev/support/) if you find Statiq useful.
 
 ## Licensing
 
