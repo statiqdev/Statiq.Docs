@@ -1,3 +1,8 @@
+# 1.0.0-beta.2
+
+- Updated Statiq Web to version [1.0.0-beta.45](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.45).
+- Updated Statiq Framework to version [1.0.0-beta.59](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.59).
+
 # 1.0.0-beta.1
 
 - Added a new `Statiq.Docs.Templates` project with a Statiq Docs template for the `dotnet new` CLI command.
