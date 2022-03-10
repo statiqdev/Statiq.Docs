@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Net;
 using Microsoft.AspNetCore.Html;
+using Microsoft.CodeAnalysis;
 using Statiq.CodeAnalysis;
 using Statiq.Common;
 
@@ -38,6 +40,30 @@ namespace Statiq.Docs
             // If it wasn't nullable, format the name
             name = context.GetFormattedHtmlName(name);
 
+            // Treat tuples specially
+            if (document.GetBool(CodeAnalysisKeys.IsTupleType))
+            {
+                // We need to manually match up the tuple element symbols with the output documents since
+                // not all tuple elements will result in an output document
+                IReadOnlyList<IDocument> tupleElements = document.GetDocumentList(CodeAnalysisKeys.TupleElements);
+                if (tupleElements?.Count > 0)
+                {
+                    string arguments = string.Join(
+                        ", <wbr>",
+                        tupleElements.Select(x =>
+                        {
+                            string typeLink = context.GetTypeLink(x.GetDocument(CodeAnalysisKeys.Type), true).Value;
+                            return x.Get<IFieldSymbol>(CodeAnalysisKeys.Symbol)?.IsExplicitlyNamedTupleElement == true
+                                ? $"{typeLink} {x.GetString(CodeAnalysisKeys.Name)}"
+                                : typeLink;
+                        }));
+                    return new HtmlString($"({arguments})");
+                }
+
+                // No tuple elements so just return the name
+                return new HtmlString(name);
+            }
+
             // Link the type and type parameters separately for generic types
             IReadOnlyList<IDocument> typeArguments = document.GetDocumentList(CodeAnalysisKeys.TypeArguments);
             if (typeArguments?.Count > 0)
@@ -50,17 +76,24 @@ namespace Statiq.Docs
                     // Get the type argument positions
                     int begin = name.IndexOf("<wbr>&lt;", StringComparison.Ordinal) + 9;
                     int openParen = name.IndexOf("&gt;<wbr>(", StringComparison.Ordinal);
-                    int end = name.LastIndexOf("&gt;<wbr>", openParen == -1 ? name.Length : openParen, StringComparison.Ordinal);  // Don't look past the opening paren if there is one
+                    int end = name.LastIndexOf(
+                        "&gt;<wbr>",
+                        openParen == -1 ? name.Length : openParen,
+                        StringComparison.Ordinal); // Don't look past the opening paren if there is one
 
                     // Remove existing type arguments and insert linked type arguments (do this first to preserve original indexes)
                     name = name
                         .Remove(begin, end - begin)
-                        .Insert(begin, string.Join(", <wbr>", typeArguments.Select(x => context.GetTypeLink(x, true).Value)));
+                        .Insert(
+                            begin,
+                            string.Join(", <wbr>", typeArguments.Select(x => context.GetTypeLink(x, true).Value)));
 
                     // Insert the link for the type
                     if (!document.Destination.IsNullOrEmpty)
                     {
-                        name = name.Insert(begin - 9, "</a>").Insert(0, $"<a href=\"{context.GetLink(document)}\">");
+                        name = name
+                            .Insert(begin - 9, "</a>")
+                            .Insert(0, $"<a href=\"{context.GetLink(document)}\">");
                     }
 
                     return new HtmlString(name);
