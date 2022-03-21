@@ -1,7 +1,7 @@
-# 1.0.0-beta.2
+# 1.0.0-beta.3
 
 - Fixed a bug when generating type links for tuple types (#47).
-- Updated Statiq Web to version [1.0.0-beta.46](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.46).
+- Updated Statiq Web to version [1.0.0-beta.47](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.47).
 - Updated Statiq Framework to version [1.0.0-beta.60](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.60).
 
 # 1.0.0-beta.2
