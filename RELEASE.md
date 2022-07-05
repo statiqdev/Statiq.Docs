@@ -1,6 +1,8 @@
 # 1.0.0-beta.4
 
 - Added a `Statiq.Docs.props` file to ensure correct MSBuild setup for Statiq Docs projects, including default Statiq namespaces for use in .NET 6 projects with implicit usings (#50).
+- Updated Statiq Web reference to version [1.0.0-beta.48](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.48).
+- Updated Statiq Framework reference to version [1.0.0-beta.61](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.61).
 
 # 1.0.0-beta.3
 
