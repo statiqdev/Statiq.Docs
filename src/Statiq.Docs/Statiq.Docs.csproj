@@ -6,6 +6,18 @@
     <PackageTags>Statiq Static StaticContent StaticSite Documentation Docs</PackageTags>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="Statiq.Docs.props" Pack="true" PackagePath="build\$(TargetFramework)\" />
+    <None Include="Statiq.Docs.props" Pack="true" PackagePath="buildTransitive\$(TargetFramework)\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Statiq.Docs.props">
+      <Pack>true</Pack>
+      <PackagePath>build\netcoreapp3.1\</PackagePath>
+    </None>
+  </ItemGroup>
+
   <Choose>
     <When Condition=" '$(StatiqWebVersion)' == ''">
       <ItemGroup>

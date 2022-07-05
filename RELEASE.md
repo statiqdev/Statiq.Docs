@@ -1,3 +1,7 @@
+# 1.0.0-beta.4
+
+- Added a `Statiq.Docs.props` file to ensure correct MSBuild setup for Statiq Docs projects, including default Statiq namespaces for use in .NET 6 projects with implicit usings (#50).
+
 # 1.0.0-beta.3
 
 - Fixed a bug when generating type links for tuple types (#47).
