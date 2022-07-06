@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Statiq.Docs.props" Pack="true" PackagePath="build\$(TargetFramework)\" />
-    <None Include="Statiq.Docs.props" Pack="true" PackagePath="buildTransitive\$(TargetFramework)\" />
+    <None Include="Statiq.Docs.targets" Pack="true" PackagePath="build\$(TargetFramework)\" />
+    <None Include="Statiq.Docs.targets" Pack="true" PackagePath="buildTransitive\$(TargetFramework)\" />
   </ItemGroup>
 
   <Choose>

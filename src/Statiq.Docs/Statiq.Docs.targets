@@ -1,0 +1,5 @@
+<Project>
+  <ItemGroup Condition="'$(Language)' == 'C#' AND ('$(ImplicitUsings)' == 'true' or '$(ImplicitUsings)' == 'enable')">
+    <Using Include="Statiq.Docs" />
+  </ItemGroup>
+</Project>
