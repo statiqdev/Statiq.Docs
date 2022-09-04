@@ -39,7 +39,7 @@ namespace Statiq.Docs.Pipelines
                             new AnalyzeCSharp()
                                 .WhereNamespaces(ctx.Settings.GetBool(DocsKeys.IncludeGlobalNamespace))
                                 .WherePublic()
-                                .WithCssClasses("code", "cs")
+                                .WithCssClasses("code", "language-csharp")
                                 .WithDestinationPrefix(ctx.GetPath(DocsKeys.ApiPath))
                                 .WithAssemblies(Config.FromContext<IEnumerable<string>>(ctx => ctx.GetList<string>(DocsKeys.AssemblyFiles)))
                                 .WithProjects(Config.FromContext<IEnumerable<string>>(ctx => ctx.GetList<string>(DocsKeys.ProjectFiles)))
