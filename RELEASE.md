@@ -1,3 +1,9 @@
+# 1.0.0-beta.6
+
+- Changed `Statiq.Docs.props` to `Statiq.Docs.targets` to resolve some import ordering bugs.
+- Updated Statiq Web reference to version [1.0.0-beta.50](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.50).
+- Updated Statiq Framework reference to version [1.0.0-beta.63](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.63).
+- 
 # 1.0.0-beta.5
 
 - Changed `Statiq.Docs.props` to `Statiq.Docs.targets` to resolve some import ordering bugs.
