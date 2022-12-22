@@ -1,3 +1,8 @@
+# 1.0.0-beta.8
+
+- Updated Statiq Web reference to version [1.0.0-beta.52](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.52).
+- Updated Statiq Framework reference to version [1.0.0-beta.64](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.64).
+- 
 # 1.0.0-beta.7
 
 - Updated Statiq Web reference to version [1.0.0-beta.51](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.51).
