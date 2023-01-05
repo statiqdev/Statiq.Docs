@@ -36,8 +36,8 @@ namespace Statiq.Docs
 
         private static readonly string[] DefaultSourceFiles = new[]
         {
-            "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
-            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs", // Alongside the input folder
+            "../../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs" // Alongside the parent project folder
         };
 
         private static TBootstrapper AddDefaultDocsSettings<TBootstrapper>(this TBootstrapper bootstrapper)

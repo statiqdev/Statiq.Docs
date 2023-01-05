@@ -1,3 +1,7 @@
+# 1.0.0-beta.10
+
+- Fixed the default `SourceFiles` paths to look alongside the `input` folder and one up, alongside the project folder (#53).
+
 # 1.0.0-beta.9
 
 - Updated Statiq Web reference to version [1.0.0-beta.53](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.53).
