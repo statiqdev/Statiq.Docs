@@ -30,8 +30,8 @@ namespace Statiq.Docs.Tests.Bootstrapper
                 result.Engine.Settings.GetList<string>(DocsKeys.SourceFiles)
                     .ShouldBe(new[]
                     {
-                        "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
-                        "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+                        "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
+                        "../../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
                     });
             }
         }
@@ -125,8 +125,8 @@ namespace Statiq.Docs.Tests.Bootstrapper
                     .ShouldBe(
                         new[]
                         {
-                            "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
-                            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+                            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
+                            "../../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
                         },
                         true);
             }
@@ -149,8 +149,8 @@ namespace Statiq.Docs.Tests.Bootstrapper
                     .ShouldBe(
                         new[]
                         {
-                            "src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
-                            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+                            "../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs",
+                            "../../src/**/{!.git,!bin,!obj,!packages,!*.Tests,}/**/*.cs"
                         },
                         true);
             }
