@@ -1,7 +1,10 @@
 # 1.0.0-beta.10
 
 - Fixed the default `SourceFiles` paths to look alongside the `input` folder and one up, alongside the project folder (#53).
-
+- Uses the full class name for code block language (#54, thanks @Turnerj).
+- Updated Statiq Web reference to version [1.0.0-beta.54](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.54).
+- Updated Statiq Framework reference to version [1.0.0-beta.66](https://github.com/statiqdev/Statiq.Framework/releases/tag/v1.0.0-beta.66).
+- 
 # 1.0.0-beta.9
 
 - Updated Statiq Web reference to version [1.0.0-beta.53](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.53).
