@@ -1,3 +1,7 @@
+# 1.0.0-beta.16
+
+- The angle brackets for generic types in the xref generated for API symbols are now converted to a dash to avoid issues with angle bracket escaping. For example, the type `RedNs.GreenClass<Foo>` now gets an xref of `api-RedNs.GreenClass-Foo-`.
+
 # 1.0.0-beta.15
 
 - Updated Statiq Web reference to version [1.0.0-beta.59](https://github.com/statiqdev/Statiq.Web/releases/tag/v1.0.0-beta.59).

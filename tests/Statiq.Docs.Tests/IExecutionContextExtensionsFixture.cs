@@ -7,6 +7,7 @@ using Shouldly;
 using Statiq.CodeAnalysis;
 using Statiq.Common;
 using Statiq.Testing;
+using Statiq.Web;
 
 namespace Statiq.Docs.Tests
 {

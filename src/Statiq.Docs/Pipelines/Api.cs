@@ -73,7 +73,10 @@ namespace Statiq.Docs.Pipelines
                             MetadataItems metadataItems = new MetadataItems();
 
                             // Calculate an xref that includes a "api-" prefix to avoid collisions
-                            metadataItems.Add(WebKeys.Xref, "api-" + doc.GetString(CodeAnalysisKeys.QualifiedName));
+                            // Also convert angle brackets to dashes so they don't risk getting escaped
+                            metadataItems.Add(
+                                WebKeys.Xref, "api-"
+                                + doc.GetString(CodeAnalysisKeys.QualifiedName).Replace("<", "-").Replace(">", "-"));
 
                             // Add the layout path if one was defined
                             NormalizedPath apiLayout = ctx.GetPath(DocsKeys.ApiLayout);
