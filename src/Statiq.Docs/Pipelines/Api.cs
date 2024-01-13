@@ -76,7 +76,7 @@ namespace Statiq.Docs.Pipelines
                             // Also convert angle brackets to dashes so they don't risk getting escaped
                             metadataItems.Add(
                                 WebKeys.Xref, "api-"
-                                + doc.GetString(CodeAnalysisKeys.QualifiedName).Replace("<", "-").Replace(">", "-"));
+                                + doc.GetString(CodeAnalysisKeys.QualifiedName).Replace("<", "-").Replace(">", "-").Replace(" ", string.Empty));
 
                             // Add the layout path if one was defined
                             NormalizedPath apiLayout = ctx.GetPath(DocsKeys.ApiLayout);
